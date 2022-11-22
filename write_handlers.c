@@ -70,13 +70,13 @@ int write_number(int is_negative, int ind, char buffer[], int flags, int width, 
  * @ind: Index at which the number starts on the buffer
  * @buffer: Buffer
  * @width: width
- * @prec: Precision specifier
+ * @precision: Precision specifier
  * @length: Number length
  * @padd: Pading char
  * @extra_c: Extra char
  * Return: Number of printed chars.
  */
-int write_num(int ind, char buffer[],int flags, int width, int prec, int length, char padd, char extra_c)
+int write_num(int ind, char buffer[],int flags, int width, int precision, int length, char padd, char extra_c)
 {
 	int i, padd_start = 1;
 
