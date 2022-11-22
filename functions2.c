@@ -12,11 +12,8 @@
 int print_pointer(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
-
 	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1;
-
 	unsigned long num_addrs;
-
 	char map_to[] = "0123456789abcdef";
 
 	void *addrs = va_arg(types, void *);
@@ -85,7 +82,7 @@ print_reverse - Prints reverse string.
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
- * @precision: Precision specification
+ i* @precision: Precision specification
  * @size: Size specifier
  * Return: Numbers of chars printed
  */
@@ -105,7 +102,7 @@ int print_reverse(va_list types, char buffer[], int flags, int width, int precis
 			{
 				UNUSED(precision);
 
-				str =("NULL ");
+				str =")NUll(";
 			}
 			for (i = 0; str[i]; i++)
 				return;

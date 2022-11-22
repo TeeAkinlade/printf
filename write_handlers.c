@@ -70,7 +70,7 @@ int write_number(int is_negative, int ind, char buffer[], int flags, int width, 
  * @ind: Index at which the number starts on the buffer
  * @buffer: Buffer
  * @width: width
- * @precision: Precision specifier
+ * @prec: Precision specifier
  * @length: Number length
  * @padd: Pading char
  * @extra_c: Extra char
@@ -119,11 +119,11 @@ int write_num(int ind, char buffer[],int flags, int width, int precision, int le
  * @buffer: Array of chars
  * @flags: Flags specifiers
  * @width: Width specifier
- * @pre: Precision
+ * @precision: Precision
  * @size: Size specifier
  * Return: Number of written chars.
  */
-int write_unsgnd(int is_negative, int ind, char buffer[], int flags, int width, int pre, int size)
+int write_unsgnd(int is_negative, int ind, char buffer[], int flags, int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1, i = 0;
 	char padd = ' ';
@@ -131,11 +131,11 @@ int write_unsgnd(int is_negative, int ind, char buffer[], int flags, int width, 
 	UNUSED(is_negative);
 		UNUSED(size);
 
-		if (pre == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
+		if (precision == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
 			return (0);
-		if (pre > 0 && prec < length)
+		if (precision > 0 && precision < length)
 			padd = ' ';
-		while (pre > length)
+		while (precision > length)
 		{
 			buffer[--ind] = '0';
 			length++;
